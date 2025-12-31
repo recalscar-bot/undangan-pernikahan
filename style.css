@@ -5,24 +5,20 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* KUNCI SCROLL */
-  font-family: 'Georgia', serif;
+  height: 100%;
+  overflow: hidden;
 }
 
 #wrapper {
   height: 100vh;
+  position: relative;
 }
 
 .panel {
   height: 100vh;
   width: 100%;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
+
 
 .cover {
   background: url("images/cover.jpg") center/cover no-repeat;
