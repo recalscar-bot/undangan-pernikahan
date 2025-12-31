@@ -1,13 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Georgia, serif;
-  background: #0f0f0f;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
   color: white;
   text-align: center;
 }
 
 .cover {
   height: 100vh;
+  background: url("images/foto1.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,26 +29,48 @@ body {
 }
 
 button {
-  padding: 12px 30px;
-  background: gold;
+  padding: 14px 35px;
+  background: linear-gradient(135deg, gold, #d4af37);
   border: none;
   cursor: pointer;
   font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s;
 }
 
-.content {
-  padding: 40px 20px;
+button:hover {
+  transform: scale(1.05);
 }
 
 .hidden {
   display: none;
 }
 
+.content {
+  padding: 50px 20px;
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  font-size: 32px;
+}
+
+.section-title {
+  margin-top: 60px;
+  color: gold;
+}
+
 .event {
   border: 1px solid gold;
   margin: 30px auto;
-  padding: 20px;
-  max-width: 400px;
+  padding: 25px;
+  max-width: 420px;
+  border-radius: 15px;
 }
 
 .quote {
@@ -45,13 +78,53 @@ button {
   opacity: 0.8;
 }
 
+.countdown {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
 input, select {
   width: 80%;
-  padding: 10px;
-  margin: 5px;
+  padding: 12px;
+  margin: 8px;
+  border-radius: 8px;
+  border: none;
 }
 
 .thanks {
-  margin-top: 40px;
+  margin-top: 50px;
   opacity: 0.7;
 }
