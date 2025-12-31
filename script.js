@@ -1,36 +1,15 @@
-gsap.registerPlugin(ScrollTrigger);
-
-// ===============================
-// INIT
-// ===============================
-const panels = document.querySelectorAll(".panel");
-const wrapper = document.getElementById("wrapper");
-
-let current = 0;
-let isAnimating = false;
-
-// Pastikan posisi awal
-gsap.set(wrapper, { y: 0 });
-
-// ===============================
-// NAVIGASI SLIDE
-// ===============================
-function goTo(index) {
-  if (index < 0 || index >= panels.length || isAnimating) return;
-  isAnimating = true;
-
-  gsap.to(wrapper, {
-    y: -index * window.innerHeight,
-    duration: 1,
-    ease: "power3.inOut",
-    onComplete: () => {
-      current = index;
-      isAnimating = false;
-    }
-  });
+// Nama tamu dari URL
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("to");
+if (guest) {
+  document.getElementById("guestName").innerText = decodeURIComponent(guest);
 }
 
-// ===============================
-// BUKA UNDANGAN
-// ===============================
-const openBtn =
+// Buka undangan
+document.getElementById("openBtn").addEventListener("click", () => {
+  document.getElementById("bgMusic").play();
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: "smooth"
+  });
+});
