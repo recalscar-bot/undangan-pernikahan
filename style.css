@@ -1,102 +1,79 @@
-body, html {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  overflow-x: hidden;
+  overflow: hidden; /* KUNCI SCROLL */
+  font-family: 'Georgia', serif;
 }
 
-.slides-container {
-  display: flex;
-  flex-direction: column;
-  scroll-snap-type: y mandatory;
+#wrapper {
   height: 100vh;
-  overflow-y: scroll;
 }
 
-.slide {
-  min-height: 100vh;
-  scroll-snap-align: start;
+.panel {
+  height: 100vh;
+  width: 100%;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
   text-align: center;
-  transition: 0.6s ease;
 }
 
 .cover {
-  background: linear-gradient(135deg, #1e1e2f, #3a3a4f);
+  background: url("images/cover.jpg") center/cover no-repeat;
   color: gold;
 }
 
-.cover button {
-  margin-top: 20px;
-  padding: 15px 40px;
-  background: gold;
-  color: #000;
+.dark {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+.light {
+  background: #ffffff;
+  color: #222;
+}
+
+h1, h2, h3 {
+  margin: 10px 0;
+}
+
+button {
+  margin-top: 25px;
+  padding: 14px 36px;
   border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, gold, #d4af37);
   font-weight: bold;
   cursor: pointer;
-}
-
-.info, .countdown-slide, .gallery-slide, .rsvp-slide {
-  background: #fff;
-  color: #333;
-}
-
-.event p {
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-#countdown {
-  font-size: 26px;
-  margin-top: 10px;
-  font-weight: bold;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  max-width: 500px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 450px;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-#lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
+  border-radius: 12px;
 }
 
 input, select {
-  margin: 8px;
-  padding: 10px;
   width: 80%;
-}
-button[type="submit"] {
-  padding: 10px 30px;
-  background: gold;
+  padding: 12px;
+  margin: 8px;
+  border-radius: 8px;
   border: none;
-  cursor: pointer;
 }
 
+#countdown {
+  font-size: 26px;
+  margin-top: 20px;
+}
