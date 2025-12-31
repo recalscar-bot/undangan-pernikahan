@@ -1,78 +1,70 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>The Wedding of A & B</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Undangan Pernikahan</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- BACKGROUND MUSIC -->
 <audio id="bgMusic" loop>
-  <source src="Photograph.mp3" type="audio/mpeg">
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- COVER -->
-<section class="cover" id="cover">
-  <div class="overlay">
-    <p>Kepada Yth.</p>
+<div class="slides-container">
+
+  <!-- COVER -->
+  <section class="slide cover" id="cover">
+    <h4>Kepada Yth.</h4>
     <h2 id="guestName">Tamu Undangan</h2>
     <h1>The Wedding of</h1>
-    <h3>Sulthan & Ketrin</h3>
-    <button onclick="openInvitation()">Buka Undangan</button>
-  </div>
-</section>
+    <h3>[Sulthan] & [Ketrin]</h3>
+    <button onclick="startInvite()">Buka Undangan</button>
+  </section>
 
-<!-- CONTENT -->
-<section class="content hidden" id="content">
-
-  <h1 class="title">Sulthan & Ketrin</h1>
-  <p class="quote">"Apa yang dipersatukan oleh cinta, tak akan terpisahkan oleh waktu."</p>
-
-  <!-- EVENT -->
-  <div class="event">
-    <h2>Akad Nikah</h2>
-    <p>Sabtu, 20 Januari 2026</p>
-    <p>09.00 WIB</p>
-    <p>Gedung Serbaguna</p>
-  </div>
-
-  <div class="event">
-    <h2>Resepsi</h2>
-    <p>Sabtu, 20 Januari 2026</p>
-    <p>11.00 WIB - Selesai</p>
-    <p>Gedung Serbaguna</p>
-  </div>
+  <!-- INFO ACARA -->
+  <section class="slide info">
+    <h2>Informasi Acara</h2>
+    <div class="event">
+      <p><strong>Akad Nikah:</strong> Sabtu, 20 Januari 2026 – 09:00</p>
+      <p><strong>Resepsi:</strong> Sabtu, 20 Januari 2026 – 11:00</p>
+      <p><strong>Tempat:</strong> Gedung Serbaguna</p>
+    </div>
+  </section>
 
   <!-- COUNTDOWN -->
-  <h2 class="section-title">Menuju Hari Bahagia</h2>
-  <div id="countdown" class="countdown"></div>
+  <section class="slide countdown-slide">
+    <h2>Countdown</h2>
+    <div id="countdown"></div>
+  </section>
 
-  <!-- GALLERY -->
-  <h2 class="section-title">Galeri Foto</h2>
-  <div class="gallery">
-    <img src="https://iili.io/fXvuda2.jpg" onclick="openLightbox(this.src)">
-    <img src="https://iili.io/fXvuNMG.jpg" onclick="openLightbox(this.src)">
-    <img src="https://iili.io/fXvaNV9.jpg" onclick="openLightbox(this.src)">
-    <img src="https://iili.io/fXvckXI.jpg" onclick="openLightbox(this.src)">
-  </div>
+  <!-- GALERI -->
+  <section class="slide gallery-slide">
+    <h2>Galeri Foto</h2>
+    <div class="gallery">
+      <img src="https://iili.io/fXvuda2.jpg" onclick="openLightbox(this.src)">
+      <img src="https://iili.io/fXvuNMG.jpg" onclick="openLightbox(this.src)">
+      <img src="https://iili.io/fXvaNV9.jpg" onclick="openLightbox(this.src)">
+      <img src="https://iili.io/fXvckXI.jpg" onclick="openLightbox(this.src)">
+    </div>
+  </section>
 
   <!-- RSVP -->
-  <h2 class="section-title">Konfirmasi Kehadiran</h2>
-  <form onsubmit="submitRSVP(event)">
-    <input id="rsvpName" placeholder="Nama Anda" required>
-    <select id="rsvpStatus">
-      <option>Hadir</option>
-      <option>Tidak Hadir</option>
-    </select>
-    <button>Kirim</button>
-  </form>
+  <section class="slide rsvp-slide">
+    <h2>Konfirmasi Kehadiran</h2>
+    <form onsubmit="submitRSVP(event)">
+      <input id="rsvpName" type="text" placeholder="Nama Anda" required>
+      <select id="rsvpStatus">
+        <option>Hadir</option>
+        <option>Tidak Hadir</option>
+      </select>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
 
-  <p class="thanks">Terima kasih atas doa & kehadiran Anda 🤍</p>
-</section>
+</div>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()">
   <img id="lightboxImg">
 </div>
