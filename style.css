@@ -1,101 +1,73 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
+body, html {
   margin: 0;
-  font-family: 'Georgia', serif;
-  background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
-  color: white;
-  text-align: center;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
 }
 
-.cover {
+.slides-container {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
   height: 100vh;
-  background: url("images/foto1.jpg") center/cover no-repeat;
-  position: relative;
+  overflow-y: scroll;
 }
 
-.overlay {
-  background: rgba(0,0,0,0.6);
-  height: 100%;
+.slide {
+  min-height: 100vh;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  transition: 0.6s ease;
 }
 
-.cover h2 {
+.cover {
+  background: linear-gradient(135deg, #1e1e2f, #3a3a4f);
   color: gold;
 }
 
-button {
-  padding: 14px 35px;
-  background: linear-gradient(135deg, gold, #d4af37);
+.cover button {
+  margin-top: 20px;
+  padding: 15px 40px;
+  background: gold;
+  color: #000;
   border: none;
-  cursor: pointer;
   font-weight: bold;
-  border-radius: 30px;
-  transition: 0.3s;
+  cursor: pointer;
 }
 
-button:hover {
-  transform: scale(1.05);
+.info, .countdown-slide, .gallery-slide, .rsvp-slide {
+  background: #fff;
+  color: #333;
 }
 
-.hidden {
-  display: none;
+.event p {
+  margin: 10px 0;
+  font-size: 18px;
 }
 
-.content {
-  padding: 50px 20px;
-  animation: fadeUp 1s ease;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.title {
-  font-size: 32px;
-}
-
-.section-title {
-  margin-top: 60px;
-  color: gold;
-}
-
-.event {
-  border: 1px solid gold;
-  margin: 30px auto;
-  padding: 25px;
-  max-width: 420px;
-  border-radius: 15px;
-}
-
-.quote {
-  font-style: italic;
-  opacity: 0.8;
-}
-
-.countdown {
-  font-size: 20px;
-  margin: 20px 0;
+#countdown {
+  font-size: 26px;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   max-width: 500px;
-  margin: 0 auto;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 
 .gallery img:hover {
@@ -105,7 +77,7 @@ button:hover {
 #lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.8);
   display: none;
   justify-content: center;
   align-items: center;
@@ -117,14 +89,14 @@ button:hover {
 }
 
 input, select {
-  width: 80%;
-  padding: 12px;
   margin: 8px;
-  border-radius: 8px;
+  padding: 10px;
+  width: 80%;
+}
+button[type="submit"] {
+  padding: 10px 30px;
+  background: gold;
   border: none;
+  cursor: pointer;
 }
 
-.thanks {
-  margin-top: 50px;
-  opacity: 0.7;
-}
