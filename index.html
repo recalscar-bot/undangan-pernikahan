@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Undangan Pernikahan</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wedding</title>
+
 <link rel="stylesheet" href="style.css">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 </head>
 <body>
 
@@ -12,61 +18,70 @@
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<div class="slides-container">
+<!-- SLIDES -->
+<div id="wrapper">
 
-  <!-- COVER -->
-  <section class="slide cover" id="cover">
-    <h4>Kepada Yth.</h4>
+  <!-- SLIDE 1 : COVER -->
+  <section class="panel cover">
+    <span>Kepada Yth.</span>
     <h2 id="guestName">Tamu Undangan</h2>
     <h1>The Wedding of</h1>
-    <h3>[Sulthan] & [Ketrin]</h3>
-    <button onclick="startInvite()">Buka Undangan</button>
+    <h3>Sulthan & Ketrin</h3>
+    <button id="openInvite">Buka Undangan</button>
   </section>
 
-  <!-- INFO ACARA -->
-  <section class="slide info">
-    <h2>Informasi Acara</h2>
-    <div class="event">
-      <p><strong>Akad Nikah:</strong> Sabtu, 20 Januari 2026 – 09:00</p>
-      <p><strong>Resepsi:</strong> Sabtu, 20 Januari 2026 – 11:00</p>
-      <p><strong>Tempat:</strong> Gedung Serbaguna</p>
-    </div>
+  <!-- SLIDE 2 : STORY -->
+  <section class="panel dark">
+    <h2>Our Love Story</h2>
+    <p>
+      Cinta mempertemukan kami,  
+      waktu mempersatukan kami,  
+      doa menyempurnakan langkah kami.
+    </p>
   </section>
 
-  <!-- COUNTDOWN -->
-  <section class="slide countdown-slide">
-    <h2>Countdown</h2>
+  <!-- SLIDE 3 : EVENT -->
+  <section class="panel light">
+    <h2>Akad Nikah</h2>
+    <p>Sabtu, 20 Januari 2026</p>
+    <p>09.00 WIB</p>
+    <p>Gedung Serbaguna</p>
+
+    <hr>
+
+    <h2>Resepsi</h2>
+    <p>11.00 WIB – Selesai</p>
+  </section>
+
+  <!-- SLIDE 4 : COUNTDOWN -->
+  <section class="panel dark">
+    <h2>Menuju Hari Bahagia</h2>
     <div id="countdown"></div>
   </section>
 
-  <!-- GALERI -->
-  <section class="slide gallery-slide">
-    <h2>Galeri Foto</h2>
+  <!-- SLIDE 5 : GALLERY -->
+  <section class="panel light">
+    <h2>Gallery</h2>
     <div class="gallery">
-      <img src="https://iili.io/fXvuda2.jpg" onclick="openLightbox(this.src)">
-      <img src="https://iili.io/fXvuNMG.jpg" onclick="openLightbox(this.src)">
-      <img src="https://iili.io/fXvaNV9.jpg" onclick="openLightbox(this.src)">
-      <img src="https://iili.io/fXvckXI.jpg" onclick="openLightbox(this.src)">
+      <img src="https://iili.io/fXvuda2.jpg">
+      <img src="https://iili.io/fXvuNMG.jpg">
+      <img src="https://iili.io/fXvaNV9.jpg">
     </div>
   </section>
 
-  <!-- RSVP -->
-  <section class="slide rsvp-slide">
+  <!-- SLIDE 6 : RSVP -->
+  <section class="panel dark">
     <h2>Konfirmasi Kehadiran</h2>
     <form onsubmit="submitRSVP(event)">
-      <input id="rsvpName" type="text" placeholder="Nama Anda" required>
-      <select id="rsvpStatus">
+      <input id="rsvpName" placeholder="Nama Anda" required>
+      <select>
         <option>Hadir</option>
         <option>Tidak Hadir</option>
       </select>
-      <button type="submit">Kirim</button>
+      <button>Kirim</button>
     </form>
   </section>
 
-</div>
-
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightboxImg">
 </div>
 
 <script src="script.js"></script>
