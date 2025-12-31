@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>The Wedding of A & B</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="cover" id="cover">
+  <p>Kepada Yth.</p>
+  <h2 id="guestName">Tamu Undangan</h2>
+  <h1>The Wedding of</h1>
+  <h3>Sulthan & Ketrin</h3>
+  <button onclick="openInvitation()">Buka Undangan</button>
+</section>
+
+<section class="content hidden" id="content">
+
+  <h1>Sulthan & Ketrin</h1>
+  <p class="quote">
+    "Apa yang dipersatukan oleh cinta, tak akan terpisahkan oleh waktu."
+  </p>
+
+  <div class="event">
+    <h2>Akad Nikah</h2>
+    <p>Sabtu, 20 Januari 2026</p>
+    <p>09.00 WIB</p>
+    <p>Gedung Serbaguna</p>
+  </div>
+
+  <div class="event">
+    <h2>Resepsi</h2>
+    <p>Sabtu, 20 Januari 2026</p>
+    <p>11.00 WIB – Selesai</p>
+    <p>Gedung Serbaguna</p>
+  </div>
+
+  <h2>Menuju Hari Bahagia</h2>
+  <div id="countdown"></div>
+
+  <h2>Konfirmasi Kehadiran</h2>
+  <form onsubmit="submitRSVP(event)">
+    <input id="rsvpName" placeholder="Nama Anda" required>
+    <select id="rsvpStatus">
+      <option>Hadir</option>
+      <option>Tidak Hadir</option>
+    </select>
+    <button>Kirim</button>
+  </form>
+
+  <p class="thanks">Terima kasih atas doa & kehadiran Anda 🤍</p>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
