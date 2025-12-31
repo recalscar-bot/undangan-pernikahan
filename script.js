@@ -1,4 +1,4 @@
-// Ambil nama tamu dari URL (?to=Nama)
+// Nama tamu dari URL
 const params = new URLSearchParams(window.location.search);
 const guest = params.get("to");
 
@@ -7,10 +7,11 @@ if (guest) {
   document.getElementById("rsvpName").value = decodeURIComponent(guest);
 }
 
-// Buka undangan
+// Open invitation + music
 function openInvitation() {
   document.getElementById("cover").style.display = "none";
   document.getElementById("content").classList.remove("hidden");
+  document.getElementById("bgMusic").play();
 }
 
 // Countdown
@@ -37,4 +38,14 @@ setInterval(() => {
 function submitRSVP(e) {
   e.preventDefault();
   alert("Terima kasih atas konfirmasi kehadiran Anda 🤍");
+}
+
+// Lightbox
+function openLightbox(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightboxImg").src = src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
 }
