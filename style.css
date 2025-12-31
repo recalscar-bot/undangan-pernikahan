@@ -1,83 +1,61 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
-  overflow: hidden;
-  background: #000;
-  font-family: 'Georgia', serif;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  font-family: Georgia, serif;
+}
 
-#wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  transform: translateY(0); /* 🔥 INI KUNCI */
+.slides {
+  height: 100%;
+}
 
-.panel {
-  width: 100%;
+.slide {
   height: 100vh;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 20px;
 }
 
 .cover {
-  background: url("images/cover.jpg") center/cover no-repeat;
+  background: linear-gradient(to bottom, #000, #222);
   color: gold;
 }
 
 .dark {
-  background: #0f0f0f;
+  background: #111;
   color: #fff;
 }
 
 .light {
-  background: #ffffff;
-  color: #222;
-}
-
-h1, h2, h3 {
-  margin: 10px 0;
+  background: #f5f5f5;
+  color: #000;
 }
 
 button {
-  margin-top: 25px;
-  padding: 14px 36px;
+  margin-top: 20px;
+  padding: 12px 30px;
   border: none;
-  border-radius: 30px;
-  background: linear-gradient(135deg, gold, #d4af37);
+  background: gold;
   font-weight: bold;
   cursor: pointer;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 450px;
+  display: flex;
+  gap: 10px;
 }
 
 .gallery img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-input, select {
-  width: 80%;
-  padding: 12px;
-  margin: 8px;
-  border-radius: 8px;
-  border: none;
-}
-
-#countdown {
-  font-size: 26px;
-  margin-top: 20px;
+  width: 100px;
+  border-radius: 10px;
 }
