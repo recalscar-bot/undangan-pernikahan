@@ -8,21 +8,29 @@
 </head>
 <body>
 
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="Photograph.mp3" type="audio/mpeg">
+</audio>
+
+<!-- COVER -->
 <section class="cover" id="cover">
-  <p>Kepada Yth.</p>
-  <h2 id="guestName">Tamu Undangan</h2>
-  <h1>The Wedding of</h1>
-  <h3>Sulthan & Ketrin</h3>
-  <button onclick="openInvitation()">Buka Undangan</button>
+  <div class="overlay">
+    <p>Kepada Yth.</p>
+    <h2 id="guestName">Tamu Undangan</h2>
+    <h1>The Wedding of</h1>
+    <h3>Sulthan & Ketrin</h3>
+    <button onclick="openInvitation()">Buka Undangan</button>
+  </div>
 </section>
 
+<!-- CONTENT -->
 <section class="content hidden" id="content">
 
-  <h1>Sulthan & Ketrin</h1>
-  <p class="quote">
-    "Apa yang dipersatukan oleh cinta, tak akan terpisahkan oleh waktu."
-  </p>
+  <h1 class="title">Sulthan & Ketrin</h1>
+  <p class="quote">"Apa yang dipersatukan oleh cinta, tak akan terpisahkan oleh waktu."</p>
 
+  <!-- EVENT -->
   <div class="event">
     <h2>Akad Nikah</h2>
     <p>Sabtu, 20 Januari 2026</p>
@@ -33,14 +41,25 @@
   <div class="event">
     <h2>Resepsi</h2>
     <p>Sabtu, 20 Januari 2026</p>
-    <p>11.00 WIB – Selesai</p>
+    <p>11.00 WIB - Selesai</p>
     <p>Gedung Serbaguna</p>
   </div>
 
-  <h2>Menuju Hari Bahagia</h2>
-  <div id="countdown"></div>
+  <!-- COUNTDOWN -->
+  <h2 class="section-title">Menuju Hari Bahagia</h2>
+  <div id="countdown" class="countdown"></div>
 
-  <h2>Konfirmasi Kehadiran</h2>
+  <!-- GALLERY -->
+  <h2 class="section-title">Galeri Foto</h2>
+  <div class="gallery">
+    <img src="https://iili.io/fXvuda2.jpg" onclick="openLightbox(this.src)">
+    <img src="https://iili.io/fXvuNMG.jpg" onclick="openLightbox(this.src)">
+    <img src="images/foto3.jpg" onclick="openLightbox(this.src)">
+    <img src="images/foto4.jpg" onclick="openLightbox(this.src)">
+  </div>
+
+  <!-- RSVP -->
+  <h2 class="section-title">Konfirmasi Kehadiran</h2>
   <form onsubmit="submitRSVP(event)">
     <input id="rsvpName" placeholder="Nama Anda" required>
     <select id="rsvpStatus">
@@ -51,8 +70,12 @@
   </form>
 
   <p class="thanks">Terima kasih atas doa & kehadiran Anda 🤍</p>
-
 </section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightboxImg">
+</div>
 
 <script src="script.js"></script>
 </body>
